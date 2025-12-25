@@ -2,6 +2,8 @@
 
 ## 1.3.1+dev (Unreleased)
 
+* Added feature to toggle back to pen/eraser
+
 ## 1.3.1
 
 * Restored the rendering of graph backgrounds used before the 1.3.0 release (#6894)
