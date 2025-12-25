@@ -169,6 +169,7 @@ public:
 
     void selectTool(ToolType type);
     void selectDefaultTool();
+    void toggleToPenOrEraser();
 
     void setFontSelected(const XojFont& font);  ///< Modifies the Action state without triggering callbacks
     void fontChanged(const XojFont& font);      ///< Set the font after the user selected a font
@@ -554,6 +555,8 @@ private:
 
     std::unique_ptr<GeometryTool> geometryTool;
     std::unique_ptr<GeometryToolController> geometryToolController;
+
+
 
     /**
      * Manage all Xournal++ plugins

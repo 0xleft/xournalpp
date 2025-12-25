@@ -628,6 +628,15 @@ static int applib_changeActionState(lua_State* L) {
 }
 
 /***
+ */
+static int applib_toggleToPenOrEraser(lua_State* L) {
+    Plugin* plugin = Plugin::getPluginFromLua(L);
+    Control* control = plugin->getControl();
+    control->toggleToPenOrEraser();
+    return 0;
+}
+
+/***
  * Get the action's state. For actions with state from an enum
  * (like ToolType, ToolSize, EraserSize, OrderChange) the return value should
  * be compared to the app.C table of constants for consistency between different
@@ -3685,6 +3694,7 @@ static const luaL_Reg applib[] = {
         {"msgbox", applib_msgbox},  // Todo(gtk4) remove this deprecated function
         {"openDialog", applib_openDialog},
         {"getActionState", applib_getActionState},
+        {"toggleToPenOrEraser", applib_toggleToPenOrEraser},
         {"changeActionState", applib_changeActionState},
         {"activateAction", applib_activateAction},
         {"getPageLabel", applib_getPageLabel},

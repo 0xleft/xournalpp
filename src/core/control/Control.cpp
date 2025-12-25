@@ -1,6 +1,7 @@
 #include "Control.h"
 
 #include <algorithm>  // for max
+#include <chrono>
 #include <cstdlib>    // for size_t
 #include <exception>  // for exce...
 #include <functional>  // for bind
@@ -1166,6 +1167,14 @@ void Control::selectDefaultTool() {
     if (toolHandler->getToolType() != TOOL_NONE) {
         selectTool(toolHandler->getToolType());
     }
+}
+void Control::toggleToPenOrEraser() {
+    if (toolHandler->getActiveTool()->getToolType() != TOOL_PEN) {
+        this->selectTool(TOOL_PEN);
+        return;
+    }
+
+    this->selectTool(TOOL_ERASER);
 }
 
 void Control::setFontSelected(const XojFont& font) {

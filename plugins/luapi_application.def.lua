@@ -1003,6 +1003,9 @@ function app.getFont() end
 ---   app.setFont({size = 14})       -- Only change font size
 function app.setFont(font) end
 
+--- Change to the last used tool
+function app.toggleToPenOrEraser() end
+
 ---@alias Action
 ---| "new-file"
 ---| "open"
